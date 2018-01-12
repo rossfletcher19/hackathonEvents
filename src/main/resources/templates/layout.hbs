@@ -8,11 +8,23 @@
 
 </head>
 <body>
-<!--begin main template-->
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#">Home</a></li>
+    <li role="presentation"><a href="/events">See All Events</a></li>
+    <li role="presentation"><a href="/events/new">Add a New Event</a></li>
+</ul>
 <div class="container">
-    {{#block "content"}}
-    {{/block }}
+    <!--begin main template-->
+    <div class="page-header">
+        <img src="/images/code.jpg" width="70%">
+        <h1>Welcome to our Hackathon Events Page <small>A journey into code!</small></h1>
+    </div>
 
+    <div class="col-md-12">
+        {{#block "content"}}
+        {{/block}}
+
+    </div>
 </div>
 <!--end main template-->
 {{#block "footer"}}
