@@ -24,3 +24,10 @@ ul li:active a {
 a {
     color: #00b3b4;
 }
+
+.agendaInput {
+    width: 400px;
+    height: 100px;
+    padding: 5px;
+    margin-left: 30px;
+}
