@@ -1,5 +1,6 @@
 package models;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /**
@@ -10,10 +11,13 @@ public class Event {
     private String agenda;
     private static ArrayList<Event> instances = new ArrayList<>();
     private boolean addedEvents;
+    private LocalDateTime createdAt;
 
     public Event (String name, String agenda) {
         this.name = name;
         this.agenda = agenda;
+        this.addedEvents = false;
+        this.createdAt = LocalDateTime.now();
         instances.add(this);
 
     }
@@ -36,6 +40,10 @@ public class Event {
 
     public boolean getAddedEvents() {
         return this.addedEvents;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 
 

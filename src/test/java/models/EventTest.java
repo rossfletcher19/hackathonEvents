@@ -3,6 +3,8 @@ package models;
 import org.junit.After;
 import org.junit.Test;
 
+import java.time.LocalDateTime;
+
 import static org.junit.Assert.*;
 
 /**
@@ -52,6 +54,16 @@ public class EventTest {
     public void getAddedEvents_isFalseAfterInstantiation_false() throws Exception {
         Event event = new Event("Java Lecture", "Classes and Objects in Java");
         assertEquals(false, event.getAddedEvents());
+    }
+
+    @Test
+    public void getCreatedAt_instantiatesWithCurrentTime_today() throws Exception {
+        Event event = setupNewEvent();
+        assertEquals(LocalDateTime.now().getDayOfWeek(), event.getCreatedAt().getDayOfWeek());
+    }
+
+    public Event setupNewEvent() {
+        return new Event("Java Lecture", "Classes and Objects in Java");
     }
 
 }
