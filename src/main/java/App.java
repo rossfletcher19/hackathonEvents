@@ -34,7 +34,7 @@ public class App {
             get("/events/delete", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
                 Event.clearAllEvents();
-                return new ModelAndView(model, "success.hbs");
+                return new ModelAndView(model, "success2.hbs");
             }, new HandlebarsTemplateEngine());
 
             get("/events/:id", (req, res) -> {

@@ -13,10 +13,6 @@
         <h1>Hackathon Event Tracker<br> We love to code!!</h1>
     </div>
     <hr>
-    <ul class="nav nav-tabs">
-        <li role="presentation" class="nav-item"><a data-toggle="tab" href="/">See All Events</a></li>
-        <li role="presentation" class="nav-item"><a data-toggle="tab" href="/events/new">Add a New Event</a></li>
-    </ul>
     <!--begin main template-->
     <div class="row">
         <div class="col-md-12" id="home">
@@ -25,6 +21,10 @@
                     <h1>Event list</h1>
                 </div>
                 <div class="panel-body">
+                    <ul class="nav nav-tabs">
+                        <li role="presentation" class="nav-item"><a data-toggle="tab" href="/">See All Events</a></li>
+                        <li role="presentation" class="nav-item"><a data-toggle="tab" href="/events/new">Add a New Event</a></li>
+                    </ul>
                     {{#block "content"}}
                     {{/block}}
                 </div>
