@@ -11,7 +11,6 @@ _A program that allows a coordinator to track events at a Startup Weekend or hac
 ## Setup/Installation Requirements
 
 * _Clone or download @ https://github.com/rossfletcher19/hackathonEvents_
-* _Check it out at gh-pages: https://rossfletcher19.github.io/hackathonEvents/
 
 ## Known Bugs
 
