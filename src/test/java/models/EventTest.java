@@ -66,4 +66,11 @@ public class EventTest {
         return new Event("Java Lecture", "Classes and Objects in Java");
     }
 
+    @Test
+    public void getId_eventsInstantiateWithID_1() throws Exception {
+        Event.clearAllEvents();
+        Event event = new Event("Java Lecture", "Classes and Objects in Java");
+        assertEquals(1, event.getId());
+    }
+
 }

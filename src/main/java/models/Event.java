@@ -12,6 +12,7 @@ public class Event {
     private static ArrayList<Event> instances = new ArrayList<>();
     private boolean addedEvents;
     private LocalDateTime createdAt;
+    private int id;
 
     public Event (String name, String agenda) {
         this.name = name;
@@ -19,6 +20,7 @@ public class Event {
         this.addedEvents = false;
         this.createdAt = LocalDateTime.now();
         instances.add(this);
+        this.id = instances.size();
 
     }
 
@@ -44,6 +46,10 @@ public class Event {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public int getId() {
+        return id;
     }
 
 
