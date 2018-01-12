@@ -1,0 +1,19 @@
+{{#partial "content"}}
+    <h3>Event Name:</h3>
+    <p>{{ event.name }}</p>
+    <h3>Agenda:</h3>
+    <p>{{ event.agenda }}</p>
+    <hr>
+    <h5>Created At:</h5>
+    <p> {{ event.createdAt }}</p>
+    <h5>Post status:</h5>
+    <p>
+        {{#if event.published }}
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>  Published
+        {{else}}
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Draft
+        {{/if}}
+    </p>
+{{/partial}}
+
+{{> layout.hbs}}

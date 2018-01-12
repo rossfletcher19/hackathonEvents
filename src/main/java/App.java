@@ -20,7 +20,7 @@ public class App {
 
             get("/events/new", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
-                return new ModelAndView(model, "event-form.hbs");
+                return new ModelAndView(model, "newevent-form.hbs");
             }, new HandlebarsTemplateEngine());
 
             post("/events/new", (request, response) -> { //URL to make new post on POST route
@@ -28,8 +28,15 @@ public class App {
                 String name = request.queryParams("name");
                 String agenda = request.queryParams("agenda");
                 Event newEvent = new Event(name, agenda);
-                model.put("EventName", newEvent);
                 return new ModelAndView(model, "success.hbs");
+            }, new HandlebarsTemplateEngine());
+
+            get("/events/:id", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                int idOfEventToFind = Integer.parseInt(req.params("id")); //pull id - must match route segment
+                Event foundEvent = Event.findById(idOfEventToFind); //use it to find event
+                model.put("event", foundEvent); //add it to model for template to display
+                return new ModelAndView(model, "event-detail.hbs"); //individual event page.
             }, new HandlebarsTemplateEngine());
 
 

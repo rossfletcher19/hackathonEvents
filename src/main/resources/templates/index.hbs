@@ -4,8 +4,9 @@
 
     {{#if events}} <!--if events exist, then -->
     {{#each events }} <!--loop-->
-    <p>Current Event:</p>
-    <p>{{ content }}</p> <!--show-->
+    <h3>Current Event:</h3>
+    <h5>{{ name }}</h5> <!--show-->
+    <p>{{ agenda }} <a href="/events/{{id}}">read more...</a></p> <!--show-->
     {{/each}}
     {{else}} <!--no events!-->
     <p>No events!</p>
