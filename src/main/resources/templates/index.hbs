@@ -6,10 +6,13 @@
         <input id="name" name="name" type="text">
         <br>
         <label for="agenda">Agenda: </label>
-        <input class="agendaInput" id="agenda" name="agenda" type="text">
+        <textarea class="agendaInput" id="agenda" name="agenda" type="text" cols="40" rows="6"></textarea>
+        <!--<input class="agendaInput" id="agenda" name="agenda" type="text">-->
 
         <button type="submit" class="btn btn-default">Add Event</button>
     </form>
+    <hr>
+    <h3>Current Events:</h3>
     <hr>
     {{#if events}} <!--if events exist, then -->
     {{#each events }} <!--loop-->

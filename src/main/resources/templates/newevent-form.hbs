@@ -5,7 +5,8 @@
         <form action="/events/{{editEvent.id}}/update" method="post">
 
             <label for="agenda">Edit this event's agenda: </label>
-            <input class="agendaInput" id="agenda" name="agenda" type="text" value="{{editEvent.agenda}}">
+            <textarea class="agendaInput" id="agenda" name="agenda" type="text" cols="40" rows="6" value="{{editEvent.agenda}}"></textarea>
+            <!--<input class="agendaInput" id="agenda" name="agenda" type="text" value="{{editEvent.agenda}}">-->
 
     {{else}}
 
@@ -15,7 +16,8 @@
                 <input id="name" name="name" type="text">
                 <br>
                 <label for="agenda">Agenda: </label>
-                <input class="agendaInput" id="agenda" name="agenda" type="text">
+                <textarea class="agendaInput" id="agenda" name="agenda" type="text" cols="40" rows="6"></textarea>
+                <!--<input class="agendaInput" id="agenda" name="agenda" type="text">-->
     {{/if}}
                 <button type="submit" class="btn btn-default">Add/Edit Event</button>
             </form>
