@@ -1,0 +1,27 @@
+{{#partial "content"}}
+
+    <h1>Event list!</h1>
+
+    {{#if events}} <!--if events exist, then -->
+    {{#each events }} <!--loop-->
+    <p>Current Event:</p>
+    <p>{{ content }}</p> <!--show-->
+    {{/each}}
+    {{else}} <!--no events!-->
+    <p>No events!</p>
+    {{/if}}
+
+    <p>Add a new Event:</p>
+
+    <form action="/events/new" method="EVENT">
+        <label for="name">Event Name</label>
+        <input id="name" name="name" type="text">
+
+        <label for="agenda">Agenda</label>
+        <input id="agenda" name="agenda" type="text">
+
+        <button type="submit" class="btn btn-default">Add Event</button>
+    </form>
+{{/partial}}
+
+{{> layout.hbs}}
