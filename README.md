@@ -1,6 +1,6 @@
 # _Hackathon Event Tracker_
 
-#### _Enter, Update, and Delete events for a Hackathon Event - 1/12/2018_
+#### _Enter, Update, and Delete evengitts for a Hackathon Event - 1/12/2018_
 
 #### By _**Ross Fletcher**_
 
