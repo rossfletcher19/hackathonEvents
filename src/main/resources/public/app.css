@@ -7,5 +7,10 @@ body {
     background-size: 100% 100%;
     margin-top: 50px;
     color: white;
-    text-align: center;
+    text-align: right;
+    padding-bottom: 0px;
+}
+
+.jumbotron h1 {
+    font-size: 40px;
 }
