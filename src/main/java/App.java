@@ -31,6 +31,12 @@ public class App {
                 return new ModelAndView(model, "success.hbs");
             }, new HandlebarsTemplateEngine());
 
+            get("/events/delete", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                Event.clearAllEvents();
+                return new ModelAndView(model, "success.hbs");
+            }, new HandlebarsTemplateEngine());
+
             get("/events/:id", (req, res) -> {
                 Map<String, Object> model = new HashMap<>();
                 int idOfEventToFind = Integer.parseInt(req.params("id")); //pull id - must match route segment
@@ -63,6 +69,8 @@ public class App {
                 deleteEvent.deleteEvent();
                 return new ModelAndView(model, "success.hbs");
             }, new HandlebarsTemplateEngine());
+
+
 
 
 
