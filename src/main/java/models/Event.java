@@ -56,5 +56,9 @@ public class Event {
         return instances.get(id-1);
     }
 
+    public void update(String agenda) {
+        this.agenda = agenda;
+    }
+
 
 }

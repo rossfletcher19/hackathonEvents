@@ -86,4 +86,18 @@ public class EventTest {
         assertEquals(2, Event.findById(otherEvent.getId()).getId());
     }
 
+    @Test
+    public void updateChangesEventAgenda() throws Exception {
+        Event event = setupNewEvent();
+        String formerAgenda = event.getAgenda();
+        LocalDateTime formerDate = event.getCreatedAt();
+        int formerId = event.getId();
+
+        event.update("Classes and Objects in Java");
+        assertEquals(formerId, event.getId());
+        assertEquals(formerDate, event.getCreatedAt());
+        assertEquals(formerAgenda, event.getAgenda());
+        
+    }
+
 }
