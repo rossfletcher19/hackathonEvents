@@ -9,6 +9,7 @@ public class Event {
     private String name;
     private String agenda;
     private static ArrayList<Event> instances = new ArrayList<>();
+    private boolean addedEvents;
 
     public Event (String name, String agenda) {
         this.name = name;
@@ -31,6 +32,10 @@ public class Event {
 
     public static void clearAllEvents(){
         instances.clear();
+    }
+
+    public boolean getAddedEvents() {
+        return this.addedEvents;
     }
 
 

@@ -48,4 +48,10 @@ public class EventTest {
         assertTrue(Event.getAll().contains(otherEvent));
     }
 
+    @Test
+    public void getAddedEvents_isFalseAfterInstantiation_false() throws Exception {
+        Event event = new Event("Java Lecture", "Classes and Objects in Java");
+        assertEquals(false, event.getAddedEvents());
+    }
+
 }
