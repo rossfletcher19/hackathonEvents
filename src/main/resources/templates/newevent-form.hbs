@@ -3,7 +3,7 @@
     {{#if editEvent}}
         <h1>Edit this Event!</h1>
         <form action="/events/{{editEvent.id}}/update" method="post">
-            <label for="agenda">Edit this event's content</label>
+            <label for="agenda">Edit this event's agenda: </label>
             <input id="agenda" name="agenda" type="text" value="{{editEvent.agenda}}">
 
     {{else}}
@@ -17,7 +17,7 @@
                 <label for="agenda">Agenda</label>
                 <input id="agenda" name="agenda" type="text">
     {{/if}}
-                <button type="submit" class="btn btn-default">Add Event!</button>
+                <button type="submit" class="btn btn-default">Add/Edit Event</button>
             </form>
 {{/partial}}
 

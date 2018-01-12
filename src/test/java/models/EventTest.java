@@ -97,7 +97,23 @@ public class EventTest {
         assertEquals(formerId, event.getId());
         assertEquals(formerDate, event.getCreatedAt());
         assertEquals(formerAgenda, event.getAgenda());
-        
+    }
+
+    @Test
+    public void deleteASpecificEvent() throws Exception {
+        Event event = setupNewEvent();
+        Event otherEvent = setupNewEvent();
+        event.deleteEvent();
+        assertEquals(1, Event.getAll().size());
+        assertEquals(Event.getAll().get(0).getId(), 2);
+    }
+
+    @Test
+    public void deleteAllEvents() throws Exception {
+        Event event = setupNewEvent();
+        Event otherEvent = setupNewEvent();
+        Event.clearAllEvents();
+        assertEquals(0, Event.getAll().size());
     }
 
 }

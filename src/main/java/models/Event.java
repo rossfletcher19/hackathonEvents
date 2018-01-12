@@ -60,5 +60,9 @@ public class Event {
         this.agenda = agenda;
     }
 
+    public void deleteEvent() {
+        instances.remove(id-1);
+    }
+
 
 }

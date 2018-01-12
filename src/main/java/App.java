@@ -39,6 +39,31 @@ public class App {
                 return new ModelAndView(model, "event-detail.hbs"); //individual event page.
             }, new HandlebarsTemplateEngine());
 
+            get("/events/:id/update", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                int idOfEventToEdit = Integer.parseInt(req.params("id"));
+                Event editEvent = Event.findById(idOfEventToEdit);
+                model.put("editEvent", editEvent);
+                return new ModelAndView(model, "newevent-form.hbs");
+            }, new HandlebarsTemplateEngine());
+
+            post("/events/:id/update", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                String newAgenda = req.queryParams("agenda");
+                int idOfEventToEdit = Integer.parseInt(req.params("id"));
+                Event editEvent = Event.findById(idOfEventToEdit);
+                editEvent.update(newAgenda); //don’t forget me
+                return new ModelAndView(model, "success.hbs");
+            }, new HandlebarsTemplateEngine());
+
+            get("/events/:id/delete", (req, res) -> {
+                Map<String, Object> model = new HashMap<>();
+                int idOfEventToDelete = Integer.parseInt(req.params("id")); //pull id - must match route segment
+                Event deleteEvent = Event.findById(idOfEventToDelete); //use it to find post
+                deleteEvent.deleteEvent();
+                return new ModelAndView(model, "success.hbs");
+            }, new HandlebarsTemplateEngine());
+
 
 
 
