@@ -73,4 +73,17 @@ public class EventTest {
         assertEquals(1, event.getId());
     }
 
+    @Test
+    public void findReturnsCorrectEvent() throws Exception {
+        Event event = setupNewEvent();
+        assertEquals(1, Event.findById(event.getId()).getId());
+    }
+
+    @Test
+    public void findReturnsCorrectEventWhenMultipleEventsExists() throws Exception {
+        Event event = setupNewEvent();
+        Event otherEvent = new Event("Java Lecture", "Classes and Objects in Java");
+        assertEquals(2, Event.findById(otherEvent.getId()).getId());
+    }
+
 }

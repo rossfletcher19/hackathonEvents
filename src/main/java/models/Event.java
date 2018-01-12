@@ -52,5 +52,9 @@ public class Event {
         return id;
     }
 
+    public static Event findById(int id) {
+        return instances.get(id-1);
+    }
+
 
 }
