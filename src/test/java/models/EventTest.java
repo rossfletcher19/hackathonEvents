@@ -15,4 +15,10 @@ public class EventTest {
         assertEquals(true, event instanceof Event);
     }
 
+    @Test
+    public void EventInstantiatesWithAgenda_true() throws Exception {
+        Event event = new Event("Coding and Hackathon Event");
+        assertEquals("Coding and Hackathon Event", event.getAgenda());
+    }
+
 }
