@@ -8,31 +8,36 @@
 
 </head>
 <body>
-<ul class="nav nav-tabs">
-    <li role="presentation" class="active"><a href="/">Home</a></li>
-    <li role="presentation"><a href="/events">See All Events</a></li>
-    <li role="presentation"><a href="/events/new">Add a New Event</a></li>
-</ul>
 <div class="container">
+    <div class="jumbotron">
+        <h1>Hackathon Event Tracker<br> We love to code!!</h1>
+    </div>
+    <hr>
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="nav-item"><a data-toggle="tab" href="/">Home</a></li>
+        <li role="presentation" class="nav-item"><a data-toggle="tab" href="/">See All Events</a></li>
+        <li role="presentation" class="nav-item"><a data-toggle="tab" href="/events/new">Add a New Event</a></li>
+    </ul>
     <!--begin main template-->
-    <div class="page-header">
-        <img src="/images/code.jpg" width="70%">
-        <h1>Welcome to our Hackathon Events Page <small>A journey into code!</small></h1>
-    </div>
+    <div class="row">
+        <div class="col-md-12" id="home">
+            <div class="panel panel-default panel-transparent">
+                <div class="panel-heading">
+                    <h1>Event list!</h1>
+                </div>
+                <div class="panel-body">
+                    {{#block "content"}}
+                    {{/block}}
+                </div>
+                <div class="container">
+                    <p class="text-muted"><a href="/events/delete">DELETE ALL EVENTS</a></p>
+                </div>
 
-    <div class="col-md-12">
-        {{#block "content"}}
-        {{/block}}
-
-    </div>
+            </div>
+        </div>
 </div>
 <!--end main template-->
 {{#block "footer"}}
-    <footer class="footer">
-        <div class="container">
-            <p class="text-muted"><a href="/events/delete">DELETE ALL EVENTS</a></p>
-        </div>
-    </footer>
 </body>
 </html>
 {{/block}}
